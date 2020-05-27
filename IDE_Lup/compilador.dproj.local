@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2020/05/16 00:02:29.000.444,=D:\Users\Lucio_Bergamasco\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2020/05/16 00:04:07.000.790,D:\Users\Lucio_Bergamasco\Documents\Embarcadero\Studio\Projects\Unit1.pas=E:\Delphi\TestIDE\ucomp.pas</Transaction>
+    <Transaction>2020/05/16 00:04:07.000.790,D:\Users\Lucio_Bergamasco\Documents\Embarcadero\Studio\Projects\Unit1.dfm=E:\Delphi\TestIDE\ucomp.dfm</Transaction>
+    <Transaction>2020/05/16 00:04:16.000.784,D:\Users\Lucio_Bergamasco\Documents\Embarcadero\Studio\Projects\Project1.dproj=E:\Delphi\TestIDE\compilador.dproj</Transaction>
+  </Transactions>
+</BorlandProject>

@@ -1,0 +1,34 @@
+unit ucomp;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.StdCtrls;
+
+type
+  TFormLup = class(TForm)
+    Panel1: TPanel;
+    Edit1: TEdit;
+    procedure Edit1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FormLup: TFormLup;
+
+implementation
+
+{$R *.dfm}
+
+procedure TFormLup.Edit1Click(Sender: TObject);
+begin
+         Edit1.AutoSize := True;
+         Edit1.Font.Size := 20;
+
+end;
+
+end.

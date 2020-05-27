@@ -1,0 +1,7 @@
+Init: 
+    Var a = 1;
+    Var b = 2;
+
+    Lout:= "Hello World";
+    Var c =  a + b;
+Finish:
