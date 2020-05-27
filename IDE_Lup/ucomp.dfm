@@ -3,8 +3,8 @@ object FormLup: TFormLup
   Top = 0
   ActiveControl = pgcEdit
   Caption = 'IDE - LUP PARA DESENVOLVIMENDO DA LINGUAGEM LAST'
-  ClientHeight = 598
-  ClientWidth = 820
+  ClientHeight = 635
+  ClientWidth = 864
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -2928,70 +2928,139 @@ object FormLup: TFormLup
   object pgcEdit: TPageControl
     Left = -5
     Top = 0
-    Width = 825
-    Height = 456
+    Width = 870
+    Height = 489
     ActivePage = tbsComp
     TabOrder = 0
     object tbsComp: TTabSheet
       Caption = 'Compilador'
-      object MemoCode: TMemo
-        Left = 19
-        Top = 57
-        Width = 766
-        Height = 321
-        Ctl3D = True
-        ParentCtl3D = False
+      ExplicitTop = 28
+      object Panel1: TPanel
+        Left = 3
+        Top = 3
+        Width = 856
+        Height = 455
+        Caption = 'Panel1'
+        Color = 3087140
+        ParentBackground = False
         TabOrder = 0
-      end
-      object btnCompilar: TBitBtn
-        Left = 288
-        Top = 384
-        Width = 89
-        Height = 41
-        Caption = '&Rodar C'#243'digo'
-        TabOrder = 1
-        OnClick = btnCompilarClick
-      end
-      object edtNomeArquivo: TLabeledEdit
-        Left = 19
-        Top = 30
-        Width = 214
-        Height = 21
-        EditLabel.Width = 65
-        EditLabel.Height = 13
-        EditLabel.Caption = 'Novo Arquivo'
-        TabOrder = 2
-      end
-      object edtAbrirArquivo: TLabeledEdit
-        Left = 459
-        Top = 30
-        Width = 214
-        Height = 21
-        EditLabel.Width = 63
-        EditLabel.Height = 13
-        EditLabel.Caption = 'Abrir Arquivo'
-        TabOrder = 3
-      end
-      object btnAbrirArquivo: TBitBtn
-        Left = 679
-        Top = 26
-        Width = 75
-        Height = 25
-        Caption = 'Abrir Arquivo'
-        TabOrder = 4
-        OnClick = btnAbrirArquivoClick
+        object Panel2: TPanel
+          Left = 507
+          Top = 5
+          Width = 321
+          Height = 71
+          Color = 6635570
+          ParentBackground = False
+          TabOrder = 0
+          object btnAbrirArquivo: TBitBtn
+            Left = 238
+            Top = 25
+            Width = 75
+            Height = 25
+            Caption = 'Abrir Arquivo'
+            TabOrder = 0
+            OnClick = btnAbrirArquivoClick
+          end
+          object edtAbrirArquivo: TLabeledEdit
+            Left = 18
+            Top = 27
+            Width = 214
+            Height = 21
+            EditLabel.Width = 63
+            EditLabel.Height = 13
+            EditLabel.Caption = 'Abrir Arquivo'
+            EditLabel.Color = clMedGray
+            EditLabel.Font.Charset = DEFAULT_CHARSET
+            EditLabel.Font.Color = clSilver
+            EditLabel.Font.Height = -11
+            EditLabel.Font.Name = 'Tahoma'
+            EditLabel.Font.Style = []
+            EditLabel.ParentColor = False
+            EditLabel.ParentFont = False
+            TabOrder = 1
+          end
+        end
+        object Panel3: TPanel
+          Left = 19
+          Top = 4
+          Width = 270
+          Height = 71
+          Color = 6635570
+          ParentBackground = False
+          TabOrder = 1
+          object edtNomeArquivo: TLabeledEdit
+            Left = 11
+            Top = 26
+            Width = 214
+            Height = 21
+            EditLabel.Width = 65
+            EditLabel.Height = 13
+            EditLabel.Caption = 'Novo Arquivo'
+            EditLabel.Font.Charset = DEFAULT_CHARSET
+            EditLabel.Font.Color = clSilver
+            EditLabel.Font.Height = -11
+            EditLabel.Font.Name = 'Tahoma'
+            EditLabel.Font.Style = []
+            EditLabel.ParentFont = False
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clBlack
+            Font.Height = -11
+            Font.Name = 'Tahoma'
+            Font.Style = []
+            ParentFont = False
+            TabOrder = 0
+          end
+        end
+        object btnCompilar: TBitBtn
+          Left = 351
+          Top = 20
+          Width = 114
+          Height = 41
+          Caption = '&Rodar C'#243'digo'
+          TabOrder = 2
+          OnClick = btnCompilarClick
+        end
+        object RichCode: TRichEdit
+          Left = 19
+          Top = 81
+          Width = 809
+          Height = 360
+          Color = 4194368
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clWhite
+          Font.Height = -11
+          Font.Name = 'Consolas'
+          Font.Style = []
+          ParentFont = False
+          PlainText = True
+          TabOrder = 3
+          WantTabs = True
+          Zoom = 100
+        end
       end
     end
     object tbsDoc: TTabSheet
       Caption = 'Documenta'#231#227'o'
       ImageIndex = 1
+      ExplicitWidth = 817
+      ExplicitHeight = 428
     end
   end
-  object memo1: TMemo
-    Left = 0
-    Top = 448
-    Width = 820
+  object MemoCode: TMemo
+    Left = 2
+    Top = 488
+    Width = 863
     Height = 153
+    Color = 6896974
+    Ctl3D = True
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
+    Font.Height = -15
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentCtl3D = False
+    ParentFont = False
     TabOrder = 1
+    WantTabs = True
   end
 end

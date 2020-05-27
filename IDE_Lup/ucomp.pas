@@ -15,9 +15,12 @@ type
     MemoCode: TMemo;
     btnCompilar: TBitBtn;
     edtNomeArquivo: TLabeledEdit;
-    memo1: TMemo;
     edtAbrirArquivo: TLabeledEdit;
     btnAbrirArquivo: TBitBtn;
+    Panel1: TPanel;
+    Panel2: TPanel;
+    Panel3: TPanel;
+    RichCode: TRichEdit;
     procedure FormActivate(Sender: TObject);
     procedure btnCompilarClick(Sender: TObject);
     procedure lexer(Sender: TObject);
@@ -46,13 +49,14 @@ end;
 
 procedure TFormLup.btnCompilarClick(Sender: TObject);
 begin
-         MemoCode.Lines.SaveToFile(edtNomeArquivo.text + '.last');
+         //MemoCode.Lines.SaveToFile(edtNomeArquivo.text + '.last');
+         RichCode.Lines.SaveToFile(edtNomeArquivo.text + '.last');
 end;
 
 procedure TFormLup.FormActivate(Sender: TObject);
 begin
                MemoCode.Lines.Clear;
-               Memo1.Lines.Clear;
+
 end;
 
 procedure TFormLup.lexer(Sender: TObject);
