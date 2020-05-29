@@ -1,7 +1,0 @@
-Init:
-	var = 1;
-	var1 = 2;
-	
-	var3 = var + var1;
-	Lout:=var3;
-Finish:

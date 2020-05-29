@@ -2934,7 +2934,6 @@ object FormLup: TFormLup
     TabOrder = 0
     object tbsComp: TTabSheet
       Caption = 'Compilador'
-      ExplicitTop = 28
       object Panel1: TPanel
         Left = 3
         Top = 3
@@ -3042,25 +3041,23 @@ object FormLup: TFormLup
     object tbsDoc: TTabSheet
       Caption = 'Documenta'#231#227'o'
       ImageIndex = 1
-      ExplicitWidth = 817
-      ExplicitHeight = 428
     end
   end
-  object MemoCode: TMemo
+  object RichOut: TRichEdit
     Left = 2
     Top = 488
-    Width = 863
-    Height = 153
-    Color = 6896974
-    Ctl3D = True
-    Font.Charset = DEFAULT_CHARSET
+    Width = 854
+    Height = 147
+    Color = 6635570
+    Font.Charset = ANSI_CHARSET
     Font.Color = clWhite
-    Font.Height = -15
-    Font.Name = 'Tahoma'
+    Font.Height = -11
+    Font.Name = 'Consolas'
     Font.Style = []
-    ParentCtl3D = False
     ParentFont = False
+    PlainText = True
     TabOrder = 1
     WantTabs = True
+    Zoom = 100
   end
 end
