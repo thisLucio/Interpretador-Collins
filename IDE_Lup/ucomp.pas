@@ -60,9 +60,9 @@ i, ipos, linha,tamanho : Integer;
 buffer : string;
 begin
 
-       if RichCode.Text = '' then
+       if (RichCode.Text = '') or (edtNomeArquivo.Text = '') then
           begin
-               MessageDlg('The field cannot be empty!', mtError, [mbOK], 0);
+               MessageDlg('Não pode deixar em branco né amigão', mtError, [mbOK], 0);
           end
         else
         begin
@@ -92,8 +92,8 @@ begin
 end;
 function TFormLup.readLine(s: String): String;
 begin
-     RichOut.Lines.LoadFromFile(s);
 
+        // RichOut.Lines.LoadFromFile(s);
 end;
 
 function TFormLup.getLine(a1: integer): integer;
@@ -102,15 +102,44 @@ peloamor: integer;
 i, ipos, linha,tamanho : Integer;
 buffer : string;
 begin
-        if Pos(RichCode.Lines.Strings[0], 'Init:') > 0 then
+   linha := 0;
+    for I := 0 to RichCode.Lines.Count - 1 do
+     if Pos(RichCode.Lines.Strings[I], 'Init:') > 0 then
         begin
-           RichCode.Lines.SaveToFile(path);
-           readLine(path);
+          // RichCode.Lines.SaveToFile(path);
+           //RichOut.Lines.LoadFromFile(path);
+            //RichOut.Lines.Delete(linha);
+            Break;
         end
-        else
-        begin
-              MessageDlg('Escreve direito filho da puta!', mtError, [mbOK], 0);
-        end;
+     else
+         begin
+            MessageDlg('Esperado "Init:" na linha 1 ', mtError, [mbOK], 0);
+             RichOut.Lines.Clear;
+         end;
+
+    if Pos(RichCode.Lines.Strings[RichCode.Lines.Count - 1], 'Finish:')>0 then
+           begin
+
+           RichCode.Lines.SaveToFile(path);
+           RichOut.Lines.LoadFromFile(path);
+           RichOut.Lines.delete(RichCode.Lines.Count-1);
+           RichOut.Lines.Delete(0);
+        end
+     else
+         begin
+                  MessageDlg('Esperado "Finish:" na útilma linha: ', mtError, [mbOK], 0);
+                   RichOut.Lines.Clear;
+         end;
+
+//       if Pos(RichCode.Lines.Strings[0], 'Init:') > 0 then
+  //      begin
+ //         RichCode.Lines.SaveToFile(path);
+ //          readLine(path);
+   //     end
+     //   else
+       // begin
+        //      MessageDlg('Esperado "Init:" na linha 1 ', mtError, [mbOK], 0);
+        //end;
  end;
 procedure TFormLup.lexer(Sender: TObject);
 begin
