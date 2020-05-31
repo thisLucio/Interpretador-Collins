@@ -3,7 +3,7 @@ object FormLup: TFormLup
   Top = 0
   ActiveControl = pgcEdit
   Caption = 'IDE - LUP PARA DESENVOLVIMENDO DA LINGUAGEM LAST'
-  ClientHeight = 635
+  ClientHeight = 748
   ClientWidth = 864
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -3047,7 +3047,7 @@ object FormLup: TFormLup
     Left = 2
     Top = 488
     Width = 854
-    Height = 147
+    Height = 249
     Color = 6635570
     Font.Charset = ANSI_CHARSET
     Font.Color = clWhite
