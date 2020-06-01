@@ -3056,6 +3056,7 @@ object FormLup: TFormLup
     Font.Style = []
     ParentFont = False
     PlainText = True
+    ReadOnly = True
     TabOrder = 1
     WantTabs = True
     Zoom = 100
