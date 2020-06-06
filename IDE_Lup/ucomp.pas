@@ -25,15 +25,13 @@ type
     procedure btnCompilarClick(Sender: TObject);
     procedure leitura(Sender: TRichEdit);
     procedure btnAbrirArquivoClick(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
 
 
 
   private
     { Private declarations }
     function readLine(s: String): String;
-   // function getLine(a1: integer): integer;
-  //  function lexer(g: String): String;
-   // function getToken(a: String): String;
 
   public
     { Public declarations }
@@ -89,6 +87,15 @@ begin
         end;
 end;
 
+procedure TFormLup.Button1Click(Sender: TObject);
+var
+ Reply, BoxStyle: Integer;
+
+begin
+     //  InputString:= InputBox('Collins', 'Informe a senha:', '*******');
+
+end;
+
 procedure TFormLup.FormActivate(Sender: TObject);
 begin
                RichOut.Lines.Clear;
@@ -99,85 +106,7 @@ begin
 
         // RichOut.Lines.LoadFromFile(s);
 end;
-{
-function TFormLup.getLine(a1: integer): integer;
-var
-peloamor: integer;
-i, ipos, linha,tamanho : Integer;
-charArray: Char;
-buffer : string;
-begin
-   linha := 0;
-    for I := 0 to RichCode.Lines.Count - 1 do
-       if Pos(RichCode.Lines.Strings[I], 'Init:') > 0 then
-          begin
-             // RichCode.Lines.SaveToFile(path);
-             //RichOut.Lines.LoadFromFile(path);
-              //RichOut.Lines.Delete(linha);
 
-             if RichCode.Lines.strings[linha].Contains('Lout:=') then
-                  begin
-                      //RichOut.Lines.strings[linha].Replace(#13#10, 'Lout:=');
-                      RichCode.Lines.SaveToFile(path);
-
-                  end
-             else
-                 //  begin
-                 //       MessageDlg('Esperado "Lout:=" '+ RichCode.Lines.strings[linha], mtError, [mbOK], 0);
-                 //        RichOut.Lines.Clear;
-                    // end;
-             Break;
-
-          end
-       else
-           begin
-              MessageDlg('Esperado "Init:" na linha '+ RichCode.Lines.Strings[linha], mtError, [mbOK], 0);
-               RichOut.Lines.Clear;
-           end;
-
-
-       // if Pos(RichCode.Lines.Strings[I], 'Lout:=') > 0 then
-       // begin
-
-       // end;
-   //   RichOut.Lines.Strings[I].Replace('Lout:=', '');
-      if Pos(RichCode.Lines.Strings[RichCode.Lines.Count - 1], 'Finish:')>0 then
-             begin
-               RichCode.Lines.SaveToFile(path);
-               RichOut.Lines.LoadFromFile(path);
-               RichOut.Lines.delete(RichCode.Lines.Count-1);
-               RichOut.Lines.Delete(0);
-
-          end
-       else
-           begin
-                    MessageDlg('Esperado "Finish:" na útilma linha: ', mtError, [mbOK], 0);
-                     RichOut.Lines.Clear;
-           end;
-
-    for I := 0 to RichOut.Lines.Count - 1 do
-            if RichOut.Lines.strings[linha].Contains('Lout:=') then
-                  begin
-                      RichOut.Lines.strings[linha].Replace('Lout:=',sLineBreak);
-                      //RichCode.Lines.SaveToFile(path);
-
-                  end
-
-
-
-
-//       if Pos(RichCode.Lines.Strings[0], 'Init:') > 0 then
-  //      begin
- //         RichCode.Lines.SaveToFile(path);
- //          readLine(path);
-   //     end
-     //   else
-       // begin
-        //      MessageDlg('Esperado "Init:" na linha 1 ', mtError, [mbOK], 0);
-        //end;
- end;
-
-  }
   procedure TFormLup.leitura(Sender: TRichEdit);
   var
    I: Integer;
@@ -185,6 +114,7 @@ begin
     linha : Integer;
     NovoConteudo: String;
      lista: TStringList;
+     j:integer;
   begin
     linha := 0;
     if Sender = RichCode then
@@ -193,8 +123,6 @@ begin
             begin
                if RichCode.Lines.strings[I].Contains('Lout:=') then
                     begin
-                        //RichOut.Lines.strings[linha].Replace(#13#10, 'Lout:=');
-                        //RemovePalavra(RichOut.Lines.strings[I], 'Lout:=');
 
                         RichCode.Lines.SaveToFile(path);
 
@@ -225,19 +153,36 @@ begin
                        RichOut.Lines.Clear;
              end;
         for I := 0 to RichOut.Lines.Count - 1 do
-            if RichOut.Lines.strings[I].Contains('Lout:=') then
-                   begin
-                      //Cria uma lista de string
+          //  if RichOut.Lines.strings[I].Contains('Lout:=') then
+                 //  begin
+                     {
                       lista := TStringList.Create;
-                      //Adiciona Strings
+
                       lista.Add(RichOut.Lines.strings[I]);
-                      //Substitui a vírgula pelo ponto
-                      RichOut.Lines.Clear;
+                        RichOut.Lines.Clear;
+                      RichOut.Lines.Add('Compilou legal Bro!');
                       lista.Text := StringReplace(lista.text, 'Lout:=', '', [rfReplaceAll]);
-                      showmessage(lista.Text);
+                      showmessage(lista.Text + #13#10);
+                      }
 
+                     //  for j:= 0 to -1 Count do
+                       begin
+                              lista := TStringList.Create;
+                              lista.Add(RichOut.Lines.strings[I]);
+                              lista.Text := StringReplace(lista.text, 'Lout:=', '', [rfReplaceAll]);
+                              if lista.Text.IsEmpty then
+                              begin
+                                    lista.Destroy;
+                              end
+                              else
+                              begin
+                                  showmessage(lista.Text);
+                              end;
 
-                 end;
+                       end;
+                      RichOut.Lines.Clear;
+                      RichOut.Lines.Add('Compilou legal Bro!');
+              //   end;
 
   end;
 end.
