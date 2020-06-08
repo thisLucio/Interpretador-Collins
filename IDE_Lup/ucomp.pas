@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, StrUtils, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.StdCtrls, Vcl.ComCtrls,
-  Vcl.TabNotBk, Vcl.ExtDlgs, Vcl.DBCtrls, Vcl.Buttons;
+  Vcl.TabNotBk, Vcl.ExtDlgs, Vcl.DBCtrls, Vcl.Buttons, Vcl.OleCtrls, SHDocVw;
 
 type
   TFormLup = class(TForm)
@@ -25,7 +25,6 @@ type
     procedure btnCompilarClick(Sender: TObject);
     procedure leitura(Sender: TRichEdit);
     procedure btnAbrirArquivoClick(Sender: TObject);
-    procedure Button1Click(Sender: TObject);
 
 
 
@@ -87,15 +86,6 @@ begin
         end;
 end;
 
-procedure TFormLup.Button1Click(Sender: TObject);
-var
- Reply, BoxStyle: Integer;
-
-begin
-     //  InputString:= InputBox('Collins', 'Informe a senha:', '*******');
-
-end;
-
 procedure TFormLup.FormActivate(Sender: TObject);
 begin
                RichOut.Lines.Clear;
@@ -152,7 +142,7 @@ end;
                       MessageDlg('Esperado "Finish:" na útilma linha: ', mtError, [mbOK], 0);
                        RichOut.Lines.Clear;
              end;
-        for I := 0 to RichOut.Lines.Count - 1 do
+       // for I := 0 to RichOut.Lines.Count - 1 do
           //  if RichOut.Lines.strings[I].Contains('Lout:=') then
                  //  begin
                      {
@@ -166,23 +156,34 @@ end;
                       }
 
                      //  for j:= 0 to -1 Count do
-                       begin
+                     //  begin
                               lista := TStringList.Create;
-                              lista.Add(RichOut.Lines.strings[I]);
-                              lista.Text := StringReplace(lista.text, 'Lout:=', '', [rfReplaceAll]);
-                              if lista.Text.IsEmpty then
+                              for J := 0 to RichOut.Lines.Count - 1 do
                               begin
-                                    lista.Destroy;
-                              end
-                              else
-                              begin
-                                  showmessage(lista.Text);
-                              end;
 
-                       end;
+                                lista.Add (RichOut.Lines.strings[J]);
+
+                                lista.Text := StringReplace(lista.text, 'Lout:=', EmptyStr, [rfReplaceAll]);
+                                lista.Text := StringReplace(lista.text, 'var:', EmptyStr, [rfReplaceAll]);
+
+                              end;
+                                if lista.Text.IsEmpty then
+                                begin
+                                      lista.Destroy;
+                                end
+                                else
+                                begin
+                                          showmessage(lista.Text);
+                                          RichOut.Lines.Clear;
+                                        //  break;
+                                end;
+
+                    //   end;
+
                       RichOut.Lines.Clear;
                       RichOut.Lines.Add('Compilou legal Bro!');
               //   end;
 
   end;
+
 end.

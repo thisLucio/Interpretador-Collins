@@ -2928,17 +2928,19 @@ object FormLup: TFormLup
   object pgcEdit: TPageControl
     Left = -5
     Top = 0
-    Width = 870
-    Height = 489
-    ActivePage = tbsComp
+    Width = 867
+    Height = 753
+    ActivePage = tbsDoc
     TabOrder = 0
     object tbsComp: TTabSheet
       Caption = 'Compilador'
+      ExplicitWidth = 866
+      ExplicitHeight = 465
       object Panel1: TPanel
         Left = 3
         Top = 3
         Width = 856
-        Height = 455
+        Height = 462
         Caption = 'Panel1'
         Color = 3087140
         ParentBackground = False
@@ -3027,9 +3029,9 @@ object FormLup: TFormLup
           Color = 4194368
           Font.Charset = ANSI_CHARSET
           Font.Color = clWhite
-          Font.Height = -11
+          Font.Height = -16
           Font.Name = 'Consolas'
-          Font.Style = []
+          Font.Style = [fsItalic]
           ParentFont = False
           PlainText = True
           TabOrder = 3
@@ -3037,28 +3039,30 @@ object FormLup: TFormLup
           Zoom = 100
         end
       end
+      object RichOut: TRichEdit
+        Left = 3
+        Top = 471
+        Width = 854
+        Height = 249
+        Color = 6635570
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clWhite
+        Font.Height = -11
+        Font.Name = 'Consolas'
+        Font.Style = []
+        ParentFont = False
+        PlainText = True
+        ReadOnly = True
+        TabOrder = 1
+        WantTabs = True
+        Zoom = 100
+      end
     end
     object tbsDoc: TTabSheet
       Caption = 'Documenta'#231#227'o'
       ImageIndex = 1
+      ExplicitWidth = 862
+      ExplicitHeight = 461
     end
-  end
-  object RichOut: TRichEdit
-    Left = 2
-    Top = 488
-    Width = 854
-    Height = 249
-    Color = 6635570
-    Font.Charset = ANSI_CHARSET
-    Font.Color = clWhite
-    Font.Height = -11
-    Font.Name = 'Consolas'
-    Font.Style = []
-    ParentFont = False
-    PlainText = True
-    ReadOnly = True
-    TabOrder = 1
-    WantTabs = True
-    Zoom = 100
   end
 end
