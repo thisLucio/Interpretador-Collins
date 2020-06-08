@@ -2,9 +2,11 @@ object FormLup: TFormLup
   Left = 0
   Top = 0
   ActiveControl = pgcEdit
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsSingle
   Caption = 'IDE - LUP PARA DESENVOLVIMENDO DA LINGUAGEM LAST'
-  ClientHeight = 748
-  ClientWidth = 864
+  ClientHeight = 758
+  ClientWidth = 874
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -3024,12 +3026,12 @@ object FormLup: TFormLup
           Top = 81
           Width = 809
           Height = 360
-          Color = 4194368
+          Color = 4663812
           Font.Charset = ANSI_CHARSET
           Font.Color = clWhite
           Font.Height = -16
           Font.Name = 'Consolas'
-          Font.Style = [fsItalic]
+          Font.Style = [fsBold]
           ParentFont = False
           PlainText = True
           TabOrder = 3
@@ -3064,9 +3066,10 @@ object FormLup: TFormLup
         Top = 0
         Width = 856
         Height = 729
+        Proportional = True
       end
       object vaiprala: TButton
-        Left = 768
+        Left = 767
         Top = 32
         Width = 75
         Height = 25
@@ -3081,6 +3084,7 @@ object FormLup: TFormLup
         Height = 25
         Caption = '<<'
         TabOrder = 1
+        OnClick = vaipracaClick
       end
     end
   end

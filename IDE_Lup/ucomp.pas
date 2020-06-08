@@ -3,7 +3,7 @@ unit ucomp;
 interface
 
 uses
-  Winapi.Windows, Winapi.Messages, StrUtils, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Winapi.Windows, Winapi.Messages, StrUtils, pngimage, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.StdCtrls, Vcl.ComCtrls,
   Vcl.TabNotBk, Vcl.ExtDlgs, Vcl.DBCtrls, Vcl.Buttons, Vcl.OleCtrls, SHDocVw;
 
@@ -29,12 +29,12 @@ type
     procedure leitura(Sender: TRichEdit);
     procedure btnAbrirArquivoClick(Sender: TObject);
     procedure vaipralaClick(Sender: TObject);
+    procedure vaipracaClick(Sender: TObject);
 
 
 
   private
     { Private declarations }
-    function readLine(s: String): String;
 
   public
     { Public declarations }
@@ -50,9 +50,10 @@ implementation
 
 {$R *.dfm}
 
+
+
 procedure TFormLup.btnAbrirArquivoClick(Sender: TObject);
  var arq: String;
-     linha: String;
 
 begin
     arq := edtAbrirArquivo.text;
@@ -69,7 +70,7 @@ begin
 
        if (RichCode.Text = '') or (edtNomeArquivo.Text = '') and (edtAbrirArquivo.Text = '')then
           begin
-               MessageDlg('Não pode deixar em branco né amigão', mtError, [mbOK], 0);
+               MessageDlg('Insira o nome do novo arquivo e digite o código', mtError, [mbOK], 0);
           end
         else
         begin
@@ -80,7 +81,7 @@ begin
 
            if peloamor = 'a' then
            begin
-             // getLine(peloamor);
+
              leitura(RichCode);
            end
            else
@@ -91,28 +92,44 @@ begin
 end;
 
 procedure TFormLup.FormActivate(Sender: TObject);
+
+
 begin
+
                RichOut.Lines.Clear;
-               Image1.Picture.LoadFromFile('../images/omg.bmp');
-
-end;
-function TFormLup.readLine(s: String): String;
-begin
-
-        // RichOut.Lines.LoadFromFile(s);
+               Image1.Picture.LoadFromFile('../images/lastjoke.png');
+               vaipraca.Enabled := False;
+               vaipraca.Visible := False;
 end;
 
-  procedure TFormLup.vaipralaClick(Sender: TObject);
+
+  procedure TFormLup.vaipracaClick(Sender: TObject);
 begin
-         Image1.Picture.LoadFromFile('../images/page1.bmp');
+        vaipraca.Enabled := False;
+        vaipraca.Visible := False;
+        vaiprala.Enabled := True;
+      vaiprala.Visible := True;
+        Image1.Picture.LoadFromFile('../images/lastjoke.png');
+end;
+
+procedure TFormLup.vaipralaClick(Sender: TObject);
+
+begin
+      vaiprala.Enabled := False;
+      vaiprala.Visible := False;
+       vaipraca.Enabled := True;
+      vaipraca.Visible := True;
+
+             Image1.Picture.LoadFromFile('../images/page1.png');
+
+
 end;
 
 procedure TFormLup.leitura(Sender: TRichEdit);
   var
    I: Integer;
-   Token: String;
     linha : Integer;
-    NovoConteudo: String;
+
      lista: TStringList;
      j:integer;
   begin
