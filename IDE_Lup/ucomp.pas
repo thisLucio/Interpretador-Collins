@@ -21,10 +21,14 @@ type
     Panel3: TPanel;
     RichCode: TRichEdit;
     RichOut: TRichEdit;
+    Image1: TImage;
+    vaiprala: TButton;
+    vaipraca: TButton;
     procedure FormActivate(Sender: TObject);
     procedure btnCompilarClick(Sender: TObject);
     procedure leitura(Sender: TRichEdit);
     procedure btnAbrirArquivoClick(Sender: TObject);
+    procedure vaipralaClick(Sender: TObject);
 
 
 
@@ -89,6 +93,7 @@ end;
 procedure TFormLup.FormActivate(Sender: TObject);
 begin
                RichOut.Lines.Clear;
+               Image1.Picture.LoadFromFile('../images/omg.bmp');
 
 end;
 function TFormLup.readLine(s: String): String;
@@ -97,7 +102,12 @@ begin
         // RichOut.Lines.LoadFromFile(s);
 end;
 
-  procedure TFormLup.leitura(Sender: TRichEdit);
+  procedure TFormLup.vaipralaClick(Sender: TObject);
+begin
+         Image1.Picture.LoadFromFile('../images/page1.bmp');
+end;
+
+procedure TFormLup.leitura(Sender: TRichEdit);
   var
    I: Integer;
    Token: String;

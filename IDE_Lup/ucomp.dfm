@@ -2934,8 +2934,6 @@ object FormLup: TFormLup
     TabOrder = 0
     object tbsComp: TTabSheet
       Caption = 'Compilador'
-      ExplicitWidth = 866
-      ExplicitHeight = 465
       object Panel1: TPanel
         Left = 3
         Top = 3
@@ -3061,8 +3059,29 @@ object FormLup: TFormLup
     object tbsDoc: TTabSheet
       Caption = 'Documenta'#231#227'o'
       ImageIndex = 1
-      ExplicitWidth = 862
-      ExplicitHeight = 461
+      object Image1: TImage
+        Left = 3
+        Top = 0
+        Width = 856
+        Height = 729
+      end
+      object vaiprala: TButton
+        Left = 768
+        Top = 32
+        Width = 75
+        Height = 25
+        Caption = '>>'
+        TabOrder = 0
+        OnClick = vaipralaClick
+      end
+      object vaipraca: TButton
+        Left = 24
+        Top = 32
+        Width = 75
+        Height = 25
+        Caption = '<<'
+        TabOrder = 1
+      end
     end
   end
 end
