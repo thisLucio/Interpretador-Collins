@@ -57,7 +57,6 @@ procedure TFormLup.btnAbrirArquivoClick(Sender: TObject);
 
 begin
     arq := edtAbrirArquivo.text;
-     //  ShowMessage(Copy('texto', 2, 3));
      RichCode.Lines.LoadFromFile(arq);
 end;
 
@@ -76,7 +75,6 @@ begin
         begin
            path := (edtNomeArquivo.text + '.last');
 
-           //MemoCode.Lines.SaveToFile(edtNomeArquivo.text + '.last');
            peloamor := 'a';
 
            if peloamor = 'a' then
@@ -169,21 +167,7 @@ procedure TFormLup.leitura(Sender: TRichEdit);
                       MessageDlg('Esperado "Finish:" na útilma linha: ', mtError, [mbOK], 0);
                        RichOut.Lines.Clear;
              end;
-       // for I := 0 to RichOut.Lines.Count - 1 do
-          //  if RichOut.Lines.strings[I].Contains('Lout:=') then
-                 //  begin
-                     {
-                      lista := TStringList.Create;
 
-                      lista.Add(RichOut.Lines.strings[I]);
-                        RichOut.Lines.Clear;
-                      RichOut.Lines.Add('Compilou legal Bro!');
-                      lista.Text := StringReplace(lista.text, 'Lout:=', '', [rfReplaceAll]);
-                      showmessage(lista.Text + #13#10);
-                      }
-
-                     //  for j:= 0 to -1 Count do
-                     //  begin
                               lista := TStringList.Create;
                               for J := 0 to RichOut.Lines.Count - 1 do
                               begin
@@ -202,15 +186,15 @@ procedure TFormLup.leitura(Sender: TRichEdit);
                                 begin
                                           showmessage(lista.Text);
                                           RichOut.Lines.Clear;
-                                        //  break;
+
                                 end;
 
-                    //   end;
+
 
                       RichOut.Lines.Clear;
                       RichOut.Lines.Add('Compilou legal Bro!');
-              //   end;
-
   end;
+
+
 
 end.

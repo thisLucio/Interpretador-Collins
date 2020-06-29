@@ -2932,7 +2932,7 @@ object FormLup: TFormLup
     Top = 0
     Width = 867
     Height = 753
-    ActivePage = tbsDoc
+    ActivePage = tbsComp
     TabOrder = 0
     object tbsComp: TTabSheet
       Caption = 'Compilador'
